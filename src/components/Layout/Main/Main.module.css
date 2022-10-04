@@ -1,0 +1,30 @@
+.name{
+  font-size: 450%;
+}
+.goal{
+  margin-top: 3%;
+  font-size: 300%;
+}
+.container{
+  margin-left: 6%;
+}
+.threeD{
+}
+.goal_container{
+
+}
+.info_three{
+  display: flex;
+  align-items: center;
+  
+}
+.info span{
+  font-size: 170%;
+  margin-top: 1.2%;
+  display: block;
+}
+.threeD{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
