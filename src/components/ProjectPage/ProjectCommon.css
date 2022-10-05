@@ -1,0 +1,21 @@
+.container{
+  display:flex;
+}
+.img_container{
+  display:flex;
+}
+.project_img{
+  width: 100%;
+  height:100%;
+}
+.project_explaination{
+  display: flex;
+  flex-direction: column;
+}
+.project_video{
+  display:flex;
+  
+}
+.react-player{
+  display:flex;
+}

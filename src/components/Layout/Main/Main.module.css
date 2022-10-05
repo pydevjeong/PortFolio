@@ -1,18 +1,29 @@
-.name{
-  font-size: 450%;
-}
-.goal{
-  margin-top: 3%;
-  font-size: 300%;
-}
 .container{
   margin-left: 6%;
+  display: block;
 }
-.threeD{
+.name{
+  font-size: 450%;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  width:0;
+  white-space: nowrap;
+  animation: typing 6s steps(20,end) forwards infinite;
+}
+@keyframes typing{
+  from {width:0}
+  to{width:45%}
+}
+
+.goal{
+  font-size: 300%;
+}
+
+/* .threeD{
 }
 .goal_container{
 
-}
+} */
 .info_three{
   display: flex;
   align-items: center;
@@ -20,11 +31,11 @@
 }
 .info span{
   font-size: 170%;
-  margin-top: 1.2%;
   display: block;
 }
 .threeD{
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
 }
