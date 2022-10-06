@@ -1,22 +1,25 @@
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-//import {OrbitControls} from '@react-three/drei';
-function CoinMesh() {
-  const mesh = useRef(null);
-  useFrame(() => (mesh.current.rotation.y = mesh.current.rotation.z += 0.1));
-  return (
-    <mesh ref={mesh} scale={3}>
-      <cylinderBufferGeometry color="red" args={[1, 1, 0.3, 50]} />
-      <meshLambertMaterial attach="material"/>
-    </mesh>
-  );
-}
-export default function Meshes() {
+import React, { useRef, useState } from "react";
+import { useLoader, useFrame } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+
+const GltfModel = ({ modelPath, scale = 100, position = [100,100,100] }) => {
+  const ref = useRef();
+  const gltf = useLoader(GLTFLoader, modelPath);
+  const [hovered, hover] = useState(false);
+
+
   return (
     <>
-      <Canvas>
-        <CoinMesh />
-      </Canvas>
+      <primitive
+        ref={ref}
+        object={gltf.scene}
+        position={position}
+        scale={100}
+        onPointerOver={(event) => hover(true)}
+        onPointerOut={(event) => hover(false)}
+      />
     </>
   );
-}
+};
+
+export default GltfModel;

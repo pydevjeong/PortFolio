@@ -1,5 +1,8 @@
-.container{
+.mainCon{
+  display: flex;
   margin-left: 6%;
+}
+.container{
   display: block;
 }
 .name{
@@ -36,6 +39,5 @@
 .threeD{
   display: flex;
   flex: 1;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }

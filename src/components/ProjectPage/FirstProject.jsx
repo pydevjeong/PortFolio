@@ -4,17 +4,15 @@ import ReactPlayer from "react-player";
 import Header from "../Layout/Header/Header";
 
 const FirstProject = () => {
+  const title="Gym_maniac"
   return (
     <>
-      <Header />
+      <Header title={title}/>
       <div className="container">
-        <h1>Gym Maniac</h1>
         <div className="img_container">
           <img className="project_img" src="imgs/projectFirst.PNG" alt="" />
         </div>
         <div className="project_explaination">
-          <p>설명글</p>
-          <p>사용한기술들, 기간, 깃허브</p>
           <div className="project_video">
             <video
               className="react-player"
@@ -25,6 +23,8 @@ const FirstProject = () => {
               loop={false}
             />
           </div>
+          <p>간단한 리액트 퀴즈앱</p>
+          <p>사용한기술들, 기간, 깃허브</p>
         </div>
       </div>
     </>

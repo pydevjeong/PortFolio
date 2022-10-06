@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./Main.module.css";
 import ThreeMain from "../Three/ThreeMain";
-import { Animated } from "react-animated-css";  
+import { Animated } from "react-animated-css";
+
 const Main = () => {
   return (
+    <div className={styles.mainCon}>
     <div className={styles.container}>
       <h1 className={styles.name}>Hi, I'm Jeong Hun.</h1>
       <div className={styles.goal_container}>
@@ -21,10 +23,11 @@ const Main = () => {
           <span>I want to make something new and unique things.</span>
           <span>Please, contact me if you are interested.</span>
         </div>
-        <div className={styles.threeD}>
-          <ThreeMain />
-        </div>
       </div>
+    </div>
+    <div className={styles.threeD}>
+          <ThreeMain scale={100} modelPath={'imgs/test2.glb'}/>
+    </div>
     </div>
   );
 };

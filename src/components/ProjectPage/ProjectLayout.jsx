@@ -1,10 +1,21 @@
-import React from 'react';
-import FirstProject from './FirstProject';
+import React from "react";
+import FirstProject from "./FirstProject";
 
 const ProjectLayout = () => {
   return (
     <div>
-      <FirstProject/>
+      <div>
+        <FirstProject />
+      </div>
+      {/* <div>
+        <FirstProject />
+      </div>
+      <div>
+        <FirstProject />
+      </div>
+      <div>
+        <FirstProject />
+      </div> */}
     </div>
   );
 };
