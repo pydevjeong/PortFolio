@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <div className={styles.mainCon}>
     <div className={styles.container}>
-      <h1 className={styles.name}>Hi, I'm Jeong Hun.</h1>
+      <h1 className={styles.name}>Hi, I'm Ernest Cooper</h1>
       <div className={styles.goal_container}>
         <Animated animationIn="fadeIn">
         <span className={styles.goal}>Who Am I?</span>

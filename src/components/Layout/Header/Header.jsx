@@ -8,7 +8,6 @@ import styles from "./Header.module.css";
 
 import { Animated } from "react-animated-css";
 
-import Modal from "react-modal";
 import ModalPage from "../../Modal/ModalPage";
 
 const Header = ({ title }) => {
