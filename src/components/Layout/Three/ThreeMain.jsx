@@ -12,7 +12,7 @@ const ThreeMain = ({ modelPath, scale = 10, position = [-200, -200, -200] }) => 
       <pointLight position={[-10, -10, -10]} />
       <Suspense fallback={null}>
         <GltfModel modelPath={modelPath} scale={scale} position={position} />
-        <OrbitControls />
+        <OrbitControls/>
       </Suspense>
     </Canvas>
   );
