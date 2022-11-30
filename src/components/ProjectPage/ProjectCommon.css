@@ -1,6 +1,7 @@
 .container{
   display:flex;
-  margin-left: 6%;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 .titleAndimg{
   display: flex;
@@ -14,12 +15,13 @@
   display:flex;
 }
 .project_img{
-  width: 80%;
-  height:80%;
+  width: 90%;
+  height:60%;
 }
 .project_explaination{
   display: flex;
   flex-direction: column;
+  font-size: 15px;
 }
 .project_video{
   display:flex;

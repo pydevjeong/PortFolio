@@ -9,10 +9,16 @@ import styles from "./Header.module.css";
 import { Animated } from "react-animated-css";
 
 import ModalPage from "../../Modal/ModalPage";
+import { Navigate } from "react-router-dom";
 
 const Header = ({ title }) => {
   const appTitle = title;
+  
   const [modalOpen, setModalOpen] = useState(false);
+
+  const navigate=()=>{
+    console.log('ni');
+  }
   const showEmailModal = () => {
     setModalOpen(true);
   };
@@ -26,7 +32,7 @@ const Header = ({ title }) => {
   return (
     <div className={styles.container}>
       <Animated animationIn="bounceInLeft" className={styles.title_container}>
-        <h1>{appTitle}</h1>
+        <h1 onClick={navigate}>{appTitle}</h1>
       </Animated>
       <Animated
         className={styles.icons_container}
@@ -35,20 +41,21 @@ const Header = ({ title }) => {
       >
         <AiOutlineGithub
           className={styles.icons}
-          size={70}
+          size={40}
           onClick={openGithub}
         />
         <p onClick={openGithub}>GitHub</p>
         <AiOutlineMail
           className={styles.icons}
-          size={70}
+          size={40}
           onClick={showEmailModal}
         />
         {modalOpen && <ModalPage setModalOpen={setModalOpen} />}
         <p onClick={showEmailModal}>Email</p>
         <AiOutlineSolution
           className={styles.icons}
-          size={70}
+          size={40}
+          // height 줄이기
           onClick={openBlog}
         />
         <p onClick={openBlog}>Blog</p>

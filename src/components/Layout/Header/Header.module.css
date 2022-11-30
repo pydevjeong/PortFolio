@@ -17,12 +17,14 @@
 }
 .icons_container p{
   margin-right: 50px;
+  margin-left: 2%;
   cursor: pointer;
 }
 .icons_container p:hover{
   color: rgb(221, 92, 193);
 }
 .icons{
+  margin-top: 3%;
   cursor: pointer;
 }
 .icons :hover{
