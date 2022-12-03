@@ -1,10 +1,9 @@
 import React from 'react';
-import FirstProject from './FirstProject'
+import GalleryThreeD from './GalleryThreeD';
+
 const Gallery = () => {
   return (
-    <div>
-      <FirstProject/>
-    </div>
+      <GalleryThreeD/>
   );
 };
 

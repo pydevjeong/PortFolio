@@ -14,7 +14,7 @@ const GltfModel = ({ modelPath, scale = 100, position = [100,100,100] }) => {
         ref={ref}
         object={gltf.scene}
         position={position}
-        scale={100}
+        scale={120}
         onPointerOver={(event) => hover(true)}
         onPointerOut={(event) => hover(false)}
       />

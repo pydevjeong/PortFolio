@@ -26,7 +26,7 @@ const Main = () => {
       </div>
     </div>
     <div className={styles.threeD}>
-          <ThreeMain scale={100} modelPath={'imgs/test2.glb'}/>
+      <ThreeMain scale={100} modelPath={'imgs/test2.glb'}/>
     </div>
     </div>
   );
