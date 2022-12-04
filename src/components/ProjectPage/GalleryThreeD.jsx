@@ -1,57 +1,90 @@
 import { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { RenderTexture, OrbitControls, PerspectiveCamera, Text, ContactShadows } from '@react-three/drei'
+import { Canvas, useFrame, useLoader } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import { TextureLoader } from 'three'
 
-export default function GalleryThreeD() {
-  return (
-    <Canvas camera={{ position: [5, 5, 5], fov: 20 }}>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} />
-      <Cube />
-      <ContactShadows frames={1} position={[0, -0.5, 0]} blur={1} opacity={0.75} />
-      <ContactShadows frames={1} position={[0, -0.5, 0]} blur={3} color="orange" />
-      <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2.1} />
-    </Canvas>
-  )
-}
-
-function Cube() {
-  const textRef = useRef()
-  useFrame((state) => (textRef.current.position.x = Math.sin(state.clock.elapsedTime) * 2))
-  return (
-    <mesh scale={1}>
-      <boxGeometry />
-      <meshStandardMaterial>
-        <RenderTexture attach="map" anisotropy={16}>
-          <PerspectiveCamera makeDefault manual aspect={1 / 1} position={[0, 0, 5]} />
-          <color attach="background" args={['orange']} />
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 5]} />
-          <Text ref={textRef} fontSize={4} color="#555">
-            hello
-          </Text>
-          <Dodecahedron />
-        </RenderTexture>
-      </meshStandardMaterial>
-    </mesh>
-  )
-}
-
-function Dodecahedron(props) {
-  const meshRef = useRef()
+function Box(props) {
+  // This reference gives us direct access to the THREE.Mesh object
+  const ref = useRef()
+  const firstImg=useLoader(TextureLoader,'imgs/projectFirst.PNG')
+  // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
-  useFrame(() => (meshRef.current.rotation.x += 0.01))
+  // Subscribe this component to the render-loop, rotate the mesh every frame
+  useFrame((state, delta) => (ref.current.rotation.y += 0.002))
+  // Return the view, these are regular Threejs elements expressed in JSX
   return (
     <mesh
       {...props}
-      ref={meshRef}
-      scale={clicked ? 1.5 : 1}
-      onClick={() => click(!clicked)}
-      onPointerOver={() => hover(true)}
-      onPointerOut={() => hover(false)}>
-      <dodecahedronGeometry args={[0.75]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : '#5de4c7'} />
+      ref={ref}
+      scale={clicked ? 2 : 1}
+      onClick={(event) => click(!clicked)}
+      onPointerOver={(event) => hover(true)}
+      onPointerOut={(event) => hover(false)}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial map={firstImg}/>
     </mesh>
+  )
+}
+function Box2(props) {
+  // This reference gives us direct access to the THREE.Mesh object
+  const ref = useRef()
+  const second=useLoader(TextureLoader,'imgs/cardGame.PNG')
+  // Hold state for hovered and clicked events
+  const [hovered, hover] = useState(false)
+  const [clicked, click] = useState(false)
+  // Subscribe this component to the render-loop, rotate the mesh every frame
+  useFrame((state, delta) => (ref.current.rotation.y += 0.002))
+  // Return the view, these are regular Threejs elements expressed in JSX
+  return (
+    <mesh
+      {...props}
+      ref={ref}
+      scale={clicked ? 2 : 1}
+      onClick={(event) => click(!clicked)}
+      onPointerOver={(event) => hover(true)}
+      onPointerOut={(event) => hover(false)}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial map={second}/>
+    </mesh>
+  )
+}
+function Box3(props) {
+  // This reference gives us direct access to the THREE.Mesh object
+  const ref = useRef()
+  const third=useLoader(TextureLoader,'imgs/teamProject.jpeg')
+  // Hold state for hovered and clicked events
+  const [hovered, hover] = useState(false)
+  const [clicked, click] = useState(false)
+  // Subscribe this component to the render-loop, rotate the mesh every frame
+  useFrame((state, delta) => (ref.current.rotation.y += 0.002))
+  // Return the view, these are regular Threejs elements expressed in JSX
+  return (
+    <mesh
+      {...props}
+      ref={ref}
+      scale={clicked ? 2 : 1}
+      onClick={(event) => click(!clicked)}
+      onPointerOver={(event) => hover(true)}
+      onPointerOut={(event) => hover(false)}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial map={third}/>
+    </mesh>
+  )
+}
+
+
+export default function GalleryThreeD() {
+  return (
+    <Canvas>
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <pointLight position={[-10, -10, -10]} />
+      {/* <Box position={[-3.2, 0, 0]} /> */}
+      <Box position={[-1.2, 0, 0]} />
+      <Box2 position={[2, 0, 0]} />
+      <Box3 position={[-1.2, 2.2, 0]} />
+      <OrbitControls />
+    </Canvas>
   )
 }
