@@ -3,22 +3,24 @@ import {
   AiOutlineGithub,
   AiOutlineMail,
   AiOutlineSolution,
+  AiOutlineArrowLeft,
 } from "react-icons/ai";
 import styles from "./Header.module.css";
 
 import { Animated } from "react-animated-css";
 
 import ModalPage from "../../Modal/ModalPage";
-import { Navigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = ({ title }) => {
   const appTitle = title;
-  
+  const navigate = useNavigate();
+  const location = useLocation()
   const [modalOpen, setModalOpen] = useState(false);
 
-  const navigate=()=>{
-    console.log('ni');
-  }
+  const navigateHandler = () => {
+    navigate('/project')
+  };
   const showEmailModal = () => {
     setModalOpen(true);
   };
@@ -28,11 +30,12 @@ const Header = ({ title }) => {
   const openBlog = () => {
     window.open("https://pro-train.tistory.com/");
   };
-  console.log(appTitle);
+
   return (
     <div className={styles.container}>
+      {location.pathname!=='/' ? <AiOutlineArrowLeft  onClick={navigateHandler} className={styles.icons_back} size={60} /> : ''}
       <Animated animationIn="bounceInLeft" className={styles.title_container}>
-        <h1 onClick={navigate}>{appTitle}</h1>
+        <h1>{appTitle}</h1>
       </Animated>
       <Animated
         className={styles.icons_container}

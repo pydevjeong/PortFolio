@@ -1,6 +1,5 @@
 import React from "react";
 import "./ProjectCommon.css";
-import ReactPlayer from "react-player";
 import Header from "../Layout/Header/Header";
 
 const FirstProject = () => {

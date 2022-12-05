@@ -6,17 +6,18 @@
 }
 .title_container{
   display: flex;
-  margin-left: 6%;
+  margin-left: 4%;
 }
 .icons_container{
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  justify-content: center;
+  justify-content: flex-end;
   width: 30%;
+  margin-right: 2%;
 }
 .icons_container p{
-  margin-right: 50px;
+  margin-right: 40px;
   margin-left: 2%;
   cursor: pointer;
 }
@@ -30,7 +31,15 @@
 .icons :hover{
   color: rgb(221, 92, 193);
 }
-
+.icons_back{
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  cursor: pointer;
+}
+.icons_back :hover{
+  color: rgb(221, 92, 193);
+}
 @media screen and (max-width: 412px){
   .icons_container{
     width: 100%;

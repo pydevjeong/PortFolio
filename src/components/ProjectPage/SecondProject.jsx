@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../Layout/Header/Header';
+import "./ProjectCommon.css";
 
 const SecondProject = () => {
   const title="Js Card-Game"

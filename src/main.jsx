@@ -4,6 +4,9 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import ProjectLayout from "./components/ProjectPage/ProjectLayout";
+import FirstProject from "./components/ProjectPage/FirstProject";
+import SecondProject from "./components/ProjectPage/SecondProject";
+import ThirdProject from "./components/ProjectPage/ThirdProject";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +16,18 @@ const router = createBrowserRouter([
   {
     path: "/project",
     element: <ProjectLayout />,
+  },
+  {
+    path: "/firstProject",
+    element: <FirstProject />,
+  },
+  {
+    path: "/secondProject",
+    element: <SecondProject />,
+  },
+  {
+    path: "/thirdProject",
+    element: <ThirdProject />,
   },
 ]);
 

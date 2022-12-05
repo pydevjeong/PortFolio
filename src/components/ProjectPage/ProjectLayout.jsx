@@ -8,9 +8,7 @@ import style from './ProjectLayout.module.css'
 
 const ProjectLayout = () => {
   return (
-  <div className={style.project_all}>
     <Gallery/>
-   </div>
   );
 };
 
