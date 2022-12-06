@@ -15,7 +15,7 @@ const ThirdProject = () => {
           <div className="project_video">
             <video
               className="react-player"
-              src="videos/jsCardGame.mp4"
+              src="videos/temp_vid.mp4"
               autoPlay={false}
               muted={true}
               controls={true}
