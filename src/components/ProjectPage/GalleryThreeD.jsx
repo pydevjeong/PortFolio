@@ -21,7 +21,6 @@ function Box(props) {
       ref={ref}
       scale={hovered ? 2 : 1}
       onClick={(event) => {
-        console.log(event.object.uuid);
         naviagate('/firstProject')
         click(!clicked);
       }}
@@ -50,7 +49,6 @@ function Box2(props) {
       ref={ref}
       scale={hovered ? 2 : 1}
       onClick={(event) => {
-        console.log(event.object.uuid);
         naviagate('/secondProject')
         click(!clicked);
       }}
@@ -79,7 +77,6 @@ function Box3(props) {
       ref={ref}
       scale={hovered ? 2 : 1}
       onClick={(event) => {
-        console.log(event.object.uuid);
         naviagate('/thirdProject')
         click(!clicked);
       }}

@@ -1,0 +1,24 @@
+.gallery_container{
+  display: flex;
+
+}
+.left_box{
+  background-color: #ffffff;
+  display: flex;
+  width: 90vw;
+  height: 98vh;
+  flex: 2;
+}
+.right_box{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+.icons_container{
+  display: flex;
+  font-size: 200%;
+}
+.main_icons{
+  cursor: pointer;
+}
